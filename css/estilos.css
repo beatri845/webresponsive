@@ -1,10 +1,19 @@
+#fancy{
+	border-radius: 0.3em;
+	display:block;
+	margin:1em auto;
+	padding: 0.3em;
+	width: 30%;
+
+}
 .caja{
 	align-items: center;
-	border:solid;
-	box-shadow: 0 0 0 .5em #000;
+	box-shadow: 0 0 0.5em #000;
 	display: flex;
 	height:400px;
 	justify-content:space-around;
+	width:80%;
+	margin:0 auto;
 }
 
 .caja div{
@@ -27,3 +36,49 @@
 .cajitas3 img{
 	max-width:100%;
 }
+@media print{
+	#fancy, .cajitas1, .cajitas2{
+		display: none;
+	}
+	.caja .cajitas3{
+		width: 80%
+		}
+	}
+@keyframes mario{
+	0%{
+		background: tomato;
+	}
+	20%{
+		background: gold;
+	}
+	60%{
+		background:lightpink;
+		transform:rotate(45deg);
+		border-radius:50%;
+	}
+	80%{
+		background: darkblue;
+	}
+	100%{
+		background: chocolate;
+	}
+
+}
+@media screen and (max-width:500px){
+	#fancy{width:100%}
+	.caja{
+		flex-direction:column;
+		height:auto;
+		width:100%;
+	}
+	.caja div{
+		width:100%;
+	}
+	.caja .cajitas3{order:1;}
+	.caja .cajitas2{
+		animation:mario infinite 5s alternate;
+		order:2;
+	}
+	.caja .cajitas1{order:3;}
+}
+
